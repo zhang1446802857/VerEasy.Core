@@ -1,0 +1,11 @@
+﻿using VerEasy.Core.IRepository.Base;
+using VerEasy.Core.IService.IService;
+using VerEasy.Core.Models.ViewModels;
+using VerEasy.Core.Service.Base;
+
+namespace @Model.NameSpace
+{
+    public class @(Model.ClassName)Service(IBaseRepository<@Model.ClassName> baseRepo) : BaseService<@Model.ClassName>(baseRepo), I@(Model.ClassName)Service
+    {
+    }
+}

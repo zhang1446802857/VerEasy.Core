@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="FastCode\ModelTemplate.cshtml" />
+	  <None Remove="FastCode\Seed\TableSeed.json" />
+	  <None Remove="FastCode\Template\ControllerTemplate.cshtml" />
+	  <None Remove="FastCode\Template\IRepositoryTemplate.cshtml" />
+	  <None Remove="FastCode\Template\IServiceTemplate.cshtml" />
+	  <None Remove="FastCode\Template\RepositoryTemplate.cshtml" />
+	  <None Remove="FastCode\Template\ServiceTemplate.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="FastCode\Seed\TableSeed.json" />
+	  <EmbeddedResource Include="FastCode\Template\ControllerTemplate.cshtml" />
+	  <EmbeddedResource Include="FastCode\Template\IServiceTemplate.cshtml" />
+	  <EmbeddedResource Include="FastCode\Template\ServiceTemplate.cshtml" />
+	  <EmbeddedResource Include="FastCode\Template\RepositoryTemplate.cshtml" />
+	  <EmbeddedResource Include="FastCode\Template\IRepositoryTemplate.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="FastCode\Template\ModelTemplate.cshtml">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="IdGen" Version="3.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+		<PackageReference Include="RazorEngine.NetCore" Version="3.1.0" />
+		<PackageReference Include="RestSharp" Version="112.1.0" />
+		<PackageReference Include="SqlSugarCore" Version="5.1.4.170" />
+	</ItemGroup>
+</Project>

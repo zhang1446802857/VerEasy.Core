@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VerEasy.Core.IService\VerEasy.Core.IService.csproj" />
+    <ProjectReference Include="..\VerEasy.Core.Repository\VerEasy.Core.Repository.csproj" />
+    <ProjectReference Include="..\VerEasy.Extensions\VerEasy.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>

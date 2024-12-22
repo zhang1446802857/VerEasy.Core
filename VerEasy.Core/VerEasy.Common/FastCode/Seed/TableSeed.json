@@ -1,0 +1,526 @@
+[
+  {
+    "TableName": "T_QzJobRecord",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "JobId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "JobExcuteMsg",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "JobExcuteTime",
+        "DataType": "datetime",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 23,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": ""
+  },
+  {
+    "TableName": "T_TaskLogs",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "LogMessage",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "TaskName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": ""
+  },
+  {
+    "TableName": "T_QzJobPlan",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "JobName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务名称"
+      },
+      {
+        "ColumnName": "JobGroup",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务分组"
+      },
+      {
+        "ColumnName": "JobCron",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务分组"
+      },
+      {
+        "ColumnName": "JobClassName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务所在类名"
+      },
+      {
+        "ColumnName": "JobAssemblyName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务所在程序集名称"
+      },
+      {
+        "ColumnName": "JobDescription",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务描述"
+      },
+      {
+        "ColumnName": "JobParams",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": "任务传参"
+      },
+      {
+        "ColumnName": "Enable",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": "启动状态"
+      },
+      {
+        "ColumnName": "JobBeginTime",
+        "DataType": "datetime",
+        "IsPrimaryKey": false,
+        "IsNullable": true,
+        "Length": 23,
+        "ColumnDescription": "任务开始时间"
+      },
+      {
+        "ColumnName": "JobEndTime",
+        "DataType": "datetime",
+        "IsPrimaryKey": false,
+        "IsNullable": true,
+        "Length": 23,
+        "ColumnDescription": "任务结束时间"
+      }
+    ],
+    "DataSql": "INSERT INTO T_QzJobPlan (Id, JobName, JobGroup, JobCron, JobClassName, JobAssemblyName, JobDescription, JobParams, Enable, JobBeginTime, JobEndTime) VALUES\r\n('1866368370589437952', 'Task测试任务', 'Test', '* * * * * ?', 'TaskTestJob', 'VerEasy.Core.Tasks', 'Task测试', '', 'False', NULL, NULL);\r\n"
+  },
+  {
+    "TableName": "T_Department",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "Name",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "SuperiorRelation",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 2000,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "ManagerId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Enable",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_Department (Id, Name, SuperiorRelation, ManagerId, Enable) VALUES\r\n('1860962296977821696', '总部', '0', '0', 'True'), ('1860962338438516736', '稽核', '1860962296977821696', '0', 'True'), ('1860962379496558592', '安保', '1860962296977821696,1860962338438516736', '0', 'True');\r\n"
+  },
+  {
+    "TableName": "T_Role",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "Name",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Description",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Enable",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_Role (Id, Name, Description, Enable) VALUES\r\n('1860957227343548416', '超级管理员', '超级管理员', 'True'), ('1860957269060096000', '普通管理员', '普通管理员', 'True'), ('1860957305282105344', '普通用户', '普通用户', 'True'), ('1860957340312932352', 'VIP用户', 'VIP用户', 'True'), ('1860957369085857792', '访客', '访客', 'True');\r\n"
+  },
+  {
+    "TableName": "T_RolePermission",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "RoleId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "PermissionId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_RolePermission (Id, RoleId, PermissionId) VALUES\r\n('1869743354238078976', '1860957227343548416', '1863459228631568384'), ('1869743354238078977', '1860957227343548416', '1863459406797213696'), ('1869743354238078978', '1860957227343548416', '1863486747070042112'), ('1869743354238078979', '1860957227343548416', '1863499434839642112'), ('1869743354238078980', '1860957227343548416', '1863499726276661248'), ('1869743354238078981', '1860957227343548416', '1863499822653378560'), ('1869743354238078982', '1860957227343548416', '1863499878932549632'), ('1869743354238078983', '1860957227343548416', '1863500009958412288'), ('1869743354238078984', '1860957227343548416', '1863856287473864704'), ('1869743354238078985', '1860957227343548416', '1863856482626441216'), ('1869743354238078986', '1860957227343548416', '1866010925270700032'), ('1869743354238078987', '1860957227343548416', '1866011074906689536'), ('1869743354238078988', '1860957227343548416', '1866353469858910208'), ('1869743354238078989', '1860957227343548416', '1866353599337074688'), ('1869743354238078990', '1860957227343548416', '1867114818306183168'), ('1869743354238078991', '1860957227343548416', '1868564860275658752'), ('1869743354238078992', '1860957227343548416', '1868564991762894848');\r\n"
+  },
+  {
+    "TableName": "T_UserRole",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "UserId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "RoleId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_UserRole (Id, UserId, RoleId) VALUES\r\n('1860957614733660160', '1860957614725271552', '1860957269060096000'), ('1860957696652611584', '1860957696627445760', '1860957305282105344'), ('1860957734107746304', '1860957734099357696', '1860957340312932352'), ('1860957773538398208', '1860957773525815296', '1860957369085857792'), ('1860957828521529344', '1860957568055250944', '1860957227343548416'), ('1860960647395807232', '1860960647383224320', '1860957369085857792'), ('1863862939744866304', '1863862939711311872', '1860957227343548416'), ('1863863050877145088', '1863863014898405376', '1860957227343548416'), ('1863863248298840064', '1863863248294645760', '1860957227343548416'), ('1863863323142000640', '1863863323137806336', '1860957269060096000'), ('1863863423020961792', '1863863423012573184', '1860957227343548416'), ('1863863423020961793', '1863863423012573184', '1860957269060096000'), ('1863863498023505920', '1863863497998340096', '1860957227343548416'), ('1864231236487221248', '1864231236344614912', '1860957227343548416'), ('1864231236487221249', '1864231236344614912', '1860957269060096000'), ('1864231236487221250', '1864231236344614912', '1860957305282105344');\r\n"
+  },
+  {
+    "TableName": "T_UserDepartment",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "UserId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "DepartmentId",
+        "DataType": "bigint",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": ""
+  },
+  {
+    "TableName": "T_Permission",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "Title",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Name",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Component",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Description",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Path",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Type",
+        "DataType": "int",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 10,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Enable",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "SuperiorRelation",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 2000,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Loading",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Icon",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_Permission (Id, Title, Name, Component, Description, Path, Type, Enable, SuperiorRelation, Loading, Icon) VALUES\r\n('1863459228631568384', '菜单权限配置', '', '', '', 'permission', '2', 'True', '0', 'False', 'Menu'), ('1863459406797213696', '菜单管理', '', '@/views/MenuPermission/Permission.vue', '', 'permission', '1', 'True', '0,1863459228631568384', 'False', 'Menu'), ('1863486747070042112', '权限分配', 'PermissionAssign', '@/views/MenuPermission/PermissionAssign.vue', '', 'PermissionAssign', '1', 'True', '0,1863459228631568384', 'False', 'Menu'), ('1863499434839642112', '用户管理', '055f5a18a62a4090bdf212d7abc525f1', '', '', '055f5a18a62a4090bdf212d7abc525f1', '2', 'True', '0', 'False', 'Menu'), ('1863499726276661248', '用户配置', 'user', '@/views/Users/index.vue', '', 'user', '1', 'True', '0,1863499434839642112', 'False', 'Menu'), ('1863499822653378560', '角色配置', 'role', '@/views/Users/RoleIndex.vue', '', 'role', '1', 'True', '0,1863499434839642112', 'False', 'Menu'), ('1863499878932549632', '部门管理', '94d23971909e41e383ee6450f62cf2e7', '', '', '94d23971909e41e383ee6450f62cf2e7', '2', 'True', '0', 'False', 'Menu'), ('1863500009958412288', '部门配置', 'department', '@/views/DepartMent/department.vue', '', 'department', '1', 'True', '0,1863499878932549632', 'False', 'Menu'), ('1863856287473864704', '系统管理', '8f2caaf07dbf4cc3a06ecd6a158887a1', '', '', '8f2caaf07dbf4cc3a06ecd6a158887a1', '2', 'True', '0', 'False', 'Menu'), ('1863856482626441216', '个人中心', 'userCenter', '@/views/Users/UserCenter.vue', '', 'userCenter', '1', 'True', '0,1863856287473864704', 'False', 'Menu'), ('1866010925270700032', '首页', 'a41490f90c874b34bd7706fccf216ad2', '', '', 'a41490f90c874b34bd7706fccf216ad2', '2', 'True', '0', 'False', 'Menu'), ('1866011074906689536', '大屏', 'bigScreen', '@/views/Dashboards/bigScreen.vue', '', 'bigScreen', '1', 'True', '0,1866010925270700032', 'False', 'Menu'), ('1866353469858910208', '任务调度', 'ba17f274a10e4f61bf4ef261aa313c40', '', '', 'ba17f274a10e4f61bf4ef261aa313c40', '2', 'True', '0', 'False', 'Menu'), ('1866353599337074688', '定时任务', 'qzJobPlan', '@/views/Task/index.vue', '', 'qzJobPlan', '1', 'True', '0,1866353469858910208', 'False', 'Menu'), ('1867114818306183168', '任务记录', 'TaskRecord', '@/views/Task/TaskRecord.vue', '', 'TaskRecord', '1', 'True', '0,1866353469858910208', 'False', 'Menu'), ('1868564860275658752', '绘图制作', '79522e5989de4354ab9fc0213de4dc96', '', '', '79522e5989de4354ab9fc0213de4dc96', '2', 'True', '0', 'False', 'Menu'), ('1868564991762894848', '图片编辑', 'drawing', '@/views/Drawing/index.vue', '', 'drawing', '1', 'True', '0,1868564860275658752', 'False', 'Menu');\r\n"
+  },
+  {
+    "TableName": "T_User",
+    "Columns": [
+      {
+        "ColumnName": "Id",
+        "DataType": "bigint",
+        "IsPrimaryKey": true,
+        "IsNullable": false,
+        "Length": 19,
+        "ColumnDescription": "主键"
+      },
+      {
+        "ColumnName": "LoginName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "UserName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "RealName",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "LoginPwd",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Email",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "PhoneNumber",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "QQNumber",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Enable",
+        "DataType": "bit",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 1,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Remark",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      },
+      {
+        "ColumnName": "Avatar",
+        "DataType": "varchar",
+        "IsPrimaryKey": false,
+        "IsNullable": false,
+        "Length": 200,
+        "ColumnDescription": null
+      }
+    ],
+    "DataSql": "INSERT INTO T_User (Id, LoginName, UserName, RealName, LoginPwd, Email, PhoneNumber, QQNumber, Enable, Remark, Avatar) VALUES\r\n('1863863497998340096', 'as', '小新', '野原新之助', '123', '123@qq.com', '2000y', '', 'True', '我是小新', 'https://gitee.com/zh1446802857/library-storage/raw/master/848ab78f-eea0-4f88-a675-0b829e1f6b62.png'), ('1864231236344614912', '123', '测试', '', '$2a$11$UJnqtwG9WRfzJ/MS4cowUOAR3BJLtX82u7BFk5EVuC2uuuhdDhNi2', '', '', '', 'True', '123', 'https://gitee.com/zh1446802857/library-storage/raw/master/848ab78f-eea0-4f88-a675-0b829e1f6b62.png');\r\n"
+  }
+]

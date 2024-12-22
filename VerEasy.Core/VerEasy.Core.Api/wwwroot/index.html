@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mr.Z">
+    <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
+    <!--<script src="/js/jquery-3.7.1.min.js"></script>-->
+    <title>VerEasy.Core 框架</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2d3a4e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            header h1 {
+                margin: 0;
+            }
+
+        section {
+            padding: 20px;
+            margin: 0 10px;
+        }
+
+        h2 {
+            color: #2d3a4e;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                margin: 8px 0;
+            }
+
+        footer {
+            background-color: #2d3a4e;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>VerEasy.Core-框架！</h1>
+        <p>高效、灵活。扩展性强的开发框架，帮助您快速启动项目，提升开发效率。</p>
+    </header>
+
+    <!-- Project Introduction Section -->
+    <section>
+        <div class="content">
+            <h2>项目简介</h2>
+            <p><strong>VerEasy.Core</strong>是一款高效、灵活的开发框架，旨在帮助开发者快速启动项目并提升开发效率。该框架具备<strong>代码生成</strong>、<strong>Serilog 日志</strong>、<strong>全局异常处理</strong>、<strong>任务调度</strong>等，设计之初便注重<strong>高效开发</strong>和<strong>优异的扩展性</strong>，适用于中小型企业以及<strong>快速开发</strong>需求的项目。</p>
+            <p>该框架采用<strong>.NET 8</strong>技术栈，结合成熟的<strong>SQLSugar ORM</strong>，提供了易于使用、功能强大的基础设施，支持快速构建稳健且可扩展的企业级应用。</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <div class="content">
+            <h2>核心特性</h2>
+            <ul>
+                <li><strong>代码生成：</strong>自动生成实体类、数据访问层、业务逻辑层等基础代码，提升开发效率。</li>
+                <li><strong>Serilog 日志：</strong>高效、可扩展的日志框架，支持多种日志输出目标。</li>
+                <li><strong>全局异常处理：</strong>捕获应用运行时的未处理异常，并返回统一格式的错误信息。</li>
+                <li><strong>任务调度功能：</strong>支持定时任务调度，适用于周期性任务管理。</li>
+                <li><strong>高度扩展性：</strong>灵活的接口设计和扩展点，支持功能模块定制和替换。</li>
+                <li><strong>SQLSugar：</strong>简洁、高效的 ORM 数据访问层，支持数据库迁移和自动更新。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section>
+        <div class="content">
+            <h2>技术栈</h2>
+            <p>该项目使用以下技术栈：</p>
+            <ul>
+                <li><strong>前端框架：</strong>Vue.js / React（根据需求选择）</li>
+                <li><strong>后端框架：</strong>ASP.NET Core Web API (.NET 8)</li>
+                <li><strong>ORM：</strong>SQLSugar ORM</li>
+                <li><strong>日志框架：</strong>Serilog</li>
+                <li><strong>任务调度：</strong>Quartz.NET / Cron表达式</li>
+                <li><strong>数据库支持：</strong>SQL Server, MySQL, PostgreSQL 等</li>
+                <li><strong>自动化文档：</strong>Swagger, Swashbuckle</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Project Structure Section -->
+    <section>
+        <div class="content">
+            <h2>项目结构</h2>
+            <p>项目结构如下：</p>
+            <pre id="directory-structure">
+                <!-- 目录结构将在这里加载 -->
+            <strong>
+                    ├── VerEasy.Common/                               公共方法类库
+                    │   ├── FastCode/                                代码生成
+                    │   │   ├── FastCodeExtension.cs                代码生成扩展[参数枚举定义]
+                    │   │   ├── FrameCode.cs                        实现代码
+                    │   │   ├── Template/                           生成模板
+                    │   │   │   ├── ControllerTemplate.cshtml
+                    │   │   │   ├── IRepositoryTemplate.cshtml
+                    │   │   │   ├── ...
+                    │   ├── Helper/                                  帮助类
+                    │   │   ├── ConsoleHelper/                      控制台输出信息
+                    │   │   │   ├── ColumnShowFormat.cs
+                    │   │   │   ├── ConsoleEnum.cs
+                    │   │   │   ├── ...
+                    │   │   ├── ProjectHelper.cs                    项目结构生成
+                    │   ├── LogHelper/                               日志输出
+                    │   │   ├── LogContextWrite.cs
+                    │   ├── Options/                                 额外所需配置
+                    │   │   ├── SerilogOptions.cs
+                    │   ├── Utils/                                   工具类
+                    │   │   ├── Appsettings.cs                      配置文件读取
+                    │   │   ├── IdGenUtils.cs                       ID生成
+                    │   │   ├── ...
+                    ├── VerEasy.Core.Api/                            程序入口
+                    │   ├── Controllers/                            控制器层
+                    │   │   ├── DbFirst/                           代码生成
+                    │   │   │   ├── DbFirstController.cs
+                    │   │   ├── QzJobPlanControllers.cs
+                    │   │   ├── SysLogsControllers.cs
+                    │   │   ├── ...
+                    │   ├── Filter/                                 过滤器
+                    │   │   ├── GlobalExceptionFilter.cs
+                    │   ├── wwwroot/                                静态文件
+                    │   │   ├── css/
+                    │   │   ├── html/
+                    │   │   ├── index.html
+                    │   │   ├── js/
+                    │   │   │   ├── jquery-3.7.1.min.js
+                    ├── VerEasy.Core.IRepository/                   仓储接口层
+                    │   ├── Base/                                  基础CURD
+                    │   │   ├── IBaseRepository.cs
+                    │   ├── IRepository/                           业务CURD
+                    │   │   ├── IQzJobPlanIRepository.cs
+                    │   │   ├── ISysLogsIRepository.cs
+                    │   ├── UnitOfWorkManage/
+                    │   │   ├── IUnitOfWorkManage.cs
+                    │   ├── VerEasy.Core.IRepository.csproj
+                    ├── VerEasy.Core.IService/                      服务接口层[同上]
+                    │   ├── Base/
+                    │   │   ├── IBaseService.cs.cs
+                    │   ├── IService/
+                    │   │   ├── IQzJobPlanIService.cs
+                    │   │   ├── ISysLogsIService.cs
+                    │   ├── ITest.cs
+                    │   ├── VerEasy.Core.IService.csproj
+                    ├── VerEasy.Core.Models/                        Model层
+                    │   ├── Base/                                  公共属性基础实体
+                    │   │   ├── BaseModel.cs
+                    │   ├── Dtos/                                  公共实体,例如统一返回实体结构
+                    │   │   ├── MessageModel.cs
+                    │   │   ├── PageModel.cs
+                    │   ├── Enums/                                 枚举
+                    │   │   ├── StatusCode.cs
+                    │   ├── ViewModels/                            业务实体
+                    │   │   ├── QzJobPlan.cs
+                    │   │   ├── SysLogs.cs
+                    ├── VerEasy.Core.Repository/                   仓储实现层
+                    │   ├── Base/
+                    │   │   ├── BaseRepository.cs
+                    │   ├── Repository/
+                    │   │   ├── QzJobPlanRepository.cs
+                    │   │   ├── SysLogsRepository.cs
+                    ├── VerEasy.Core.Service/                      服务实现层
+                    │   ├── Base/
+                    │   │   ├── BaseService.cs.cs
+                    │   ├── Service/
+                    │   │   ├── QzJobPlanService.cs
+                    │   │   ├── SysLogsService.cs
+                    ├── VerEasy.Core.Tasks/                        任务调度层
+                    │   ├── Quartz.Net/
+                    │   │   ├── IScheduleCenter.cs               调度中心
+                    │   │   ├── JobFactory.cs                    继承IJOBFactory
+                    │   │   ├── Jobs/                            Job任务
+                    │   │   │   ├── SumJob.cs
+                    │   │   ├── ...
+                    ├── VerEasy.Extensions/                       扩展类库
+                    │   ├── Aop/                                 AOP相关
+                    │   │   ├── BaseLogAop.cs
+                    │   │   ├── LogAop.cs
+                    │   ├── ServiceExtensions/                   注入服务
+                    │   │   ├── AppConfigConsoleSetup.cs
+                    │   │   ├── JobSetup.cs
+                    │   │   ├── Module/                         扩展模块
+                    │   │   │   ├── AutofacModuleRegister.cs
+                    │   │   ├── ...
+                    │   │   ├── Sqlsugar/
+                    │   │   │   ├── RazorService.cs
+                    │   │   │   ├── SqlsugarSetup.cs
+                    │   ├── ServiceMiddlewares/                 中间件
+                    │   │   ├── SwaggerMiddleware.cs
+                    │   ├── VerEasy.Extensions.csproj
+                    ├── VerEasy.Serilog/                        日志类库
+                    │   ├── BaseLogAopModel.cs
+                    │   ├── LoggerConfigurationExtensions.cs   日志输出扩展方法
+                    │   ├── ...
+                </strong>
+            </pre>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="content">
+            <h2>联系方式</h2>
+            <p>如果您对本项目有任何问题或建议，请通过以下方式与我联系：</p>
+            <ul>
+                <li>邮箱：<a href="1446802857@qq.com">1446802857@qq.com</a></li>
+                <!--<li>GitHub：<a href="https://github.com/yourgithubusername" target="_blank">https://github.com/yourgithubusername</a></li>-->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 你的名字 - 所有权利保留</p>
+    </footer>
+</body>
+</html>

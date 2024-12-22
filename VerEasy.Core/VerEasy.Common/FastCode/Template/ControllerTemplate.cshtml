@@ -1,0 +1,22 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using VerEasy.Core.IService.IService;
+using VerEasy.Core.Models.Dtos;
+using VerEasy.Core.Models.ViewModels;
+
+namespace @Model.NameSpace
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
+    public class @(Model.ClassName)Controller(I@(Model.ClassName)Service service) : ControllerBase
+    {
+        public I@(Model.ClassName)Service _service = service;
+
+        [HttpGet("QueryAll")]
+        public async Task<MessageModel<List<@Model.ClassName>>> QueryAll()
+        {
+            return MessageModel<List<@(Model.ClassName)>>.Ok(await _service.Query());
+        }
+    }
+}

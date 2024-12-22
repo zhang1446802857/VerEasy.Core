@@ -1,0 +1,11 @@
+﻿using SqlSugar;
+using VerEasy.Core.IRepository.IRepository;
+using VerEasy.Core.Models.ViewModels;
+using VerEasy.Core.Repository.Base;
+
+namespace @Model.NameSpace
+{
+    public class @(Model.ClassName)Repository(ISqlSugarClient db) : BaseRepository<@Model.ClassName>(db), I@(Model.ClassName)Repository
+    {
+    }
+}

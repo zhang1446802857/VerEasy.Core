@@ -1,0 +1,49 @@
+﻿using SqlSugar;
+using VerEasy.Core.Models.Base;
+
+namespace @Model.NameSpace
+{
+    ///<summary>
+    /// @Model.ClassName
+    ///</summary>
+    [SugarTable("@Model.DbTableName")]
+    public partial class @Model.ClassName @(Model.UseBaseModel ? ":BaseModel" : string.Empty)
+    {   
+        public @(Model.ClassName)()
+        { }
+ @foreach (var item in @Model.ColumnInfos)
+   {
+      if(item.IsPrimarykey&&item.IsIdentity){
+        @:/// <summary>
+        @:/// 描述:@(item.ColumnDescription ?? item.DbColumnName)
+        @:/// </summary>     
+        @:[SugarColumn(IsPrimaryKey = true, IsIdentity = true)]      
+        @:public @item.DataType @item.DbColumnName {get;set;}
+        }
+        else if(item.IsPrimarykey)
+        {
+        @:/// <summary>
+        @:/// 描述:@(item.ColumnDescription ?? item.DbColumnName)
+        @:/// </summary>    
+        @:[SugarColumn(IsPrimaryKey = true)]       
+        @:public @item.DataType @item.DbColumnName {get;set;}
+        } 
+        else if(item.IsIdentity)
+        {
+        @:/// <summary>
+        @:/// 描述:@(item.ColumnDescription ?? item.DbColumnName)
+        @:/// </summary>      
+        @:[SugarColumn(IsIdentity = true)]    
+        @:public @item.DataType @item.DbColumnName {get;set;}
+         }
+         else
+         {
+
+        @:/// <summary>
+        @:/// 描述:@(item.ColumnDescription ?? item.DbColumnName)
+        @:/// </summary>           
+        @:public @item.DataType @item.DbColumnName {get;set;}
+         }
+       }
+    }
+}
